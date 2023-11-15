@@ -42,7 +42,6 @@ public class AnagramGroup {
             returnValue.add(anagramHash.get(key));
            
         }
-
         return returnValue;
         
     }
