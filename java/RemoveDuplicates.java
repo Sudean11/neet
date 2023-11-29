@@ -1,3 +1,4 @@
+package java;
 public class RemoveDuplicates {
     
     public static void main(String[] args) {
@@ -23,4 +24,9 @@ public class RemoveDuplicates {
         System.out.println(newNumber);
         return newNumber;
     }
+}
+
+
+enum hello {
+    RemoveDuplicates, 
 }
