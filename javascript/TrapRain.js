@@ -1,63 +1,33 @@
-// /**
-//  * @param {number[]} height
-//  * @return {number}
-//  */
-// var trap = function(height) {
-    
-//     var nodeHeight = 0;
-//     nodeHeight = height[0];
-//     var latestWaterAmount = 0;
-//     var totalWaterAmount = 0;
-    
-//     for(var i = 1; i<height.length; i++){
-//         if(nodeHeight > height[i]){
-//             latestWaterAmount += nodeHeight-height[i];
-//             console.log(height[i]+ ", LatestWaterAmount "+ latestWaterAmount + ", Total Water amount: "+ totalWaterAmount);
-//         }else{
-//             totalWaterAmount+=latestWaterAmount;
-//             console.log(height[i]+ ", LatestWaterAmount "+ latestWaterAmount + ", Total Water amount: "+ totalWaterAmount);
-//             latestWaterAmount = 0;
-//             nodeHeight = height[i];
-//         }
-//     }
-//     return totalWaterAmount;
-// };
-    
-
-// console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1]));
-
-
-
-/**
- * @param {number[]} height
- * @return {number}
- */
 var trap = function(height) {
     totalWaterAmount = 0;
-    leftMost = height[0];
-    leftMostIndex = 0;
+    leftMax = height[0];
+    rightMax = height[height.length-1]
+    leftIndex = 0;
+    rightIndex = height.length-1;
 
-    for(var i = 1; i<height.length; i++){
-        if(leftMost > height[i]){
-            continue;
-        }
-        else{
-            
-            var water = 0;
-            for(var j = leftMostIndex; j <= i; j++){
-                water+=leftMost-height[j];
+    while(leftIndex < rightIndex){
+
+        if(leftIndex <= rightIndex){
+            leftIndex++;
+            if(height[leftIndex] < leftMax){
+                totalWaterAmount+= leftMax-height[leftIndex];
+                
+            }else{
+                leftMax = height[leftIndex];
             }
-            console.log("leftMost: "+leftMost+", leftMostIndex: "+leftMostIndex+ ", total water: "+totalWaterAmount);
-            if(water>0){
-                totalWaterAmount+=water;
+        }else{
+            rightIndex--;
+            if(height[rightIndex] < rightIndex){
+                totalWaterAmount+= rightMax-height[rightIndex];
+            }else{
+                rightMax = height[rightIndex];
             }
-            leftMost = height[i];
-            leftMostIndex = i;
         }
+
 
     }
 
-    
+
     return totalWaterAmount;
 };
     

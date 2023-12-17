@@ -13,6 +13,6 @@ public class TrapWater {
     }
 
     public static void main(String[] args) {
-        new TrapWater().trap(new int[]{0,1,0,2,1,0,1,3,2,1,2,1});
+        new TrapWater().trap(new int[]{0,1,0,3,5,0,5,4,0,3,2,4,3,2,0,1});
     }
 }

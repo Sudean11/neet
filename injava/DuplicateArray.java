@@ -1,4 +1,4 @@
-package java;
+package injava;
 import java.util.HashMap;
 
 class Solution {
