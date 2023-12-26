@@ -1,13 +1,21 @@
-var topKFrequent = function(nums, k) {
-    setMap = new Map();
-    nums.forEach(element => {
-        if(setMap.has(element)){
-            setMap.set(element, setMap.get(element)+1);
+var topKFrequent = (nums, k) => {
+    var array = [];
+    for(const num of nums){
+        numExists = array.some(x=>x.name == num);
+        if(!numExists){
+            array.push({name: num, count: 1});
         }else{
-            setMap.set(element, 1);
+            valueToUpdate = array.find(x=>x.name == num);
+            valueToUpdate.count = valueToUpdate.count +1;
         }
-    });
-    let a  = Array.from(setMap.entries()).sort((x,y)=> x[1]-y[1]);
-};
+    }
 
+    array.sort((x, y)=>y.count - x.count);
+    console.log(array);
+    cd = array.splice(0,k);
+    ab = cd.map(x=>x.name);
+
+    console.log(ab);
+    return ab;
+};
 topKFrequent([1,1,1,2,2,3], 2);
