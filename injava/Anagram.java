@@ -1,6 +1,6 @@
 package injava;
 
-class Solution {
+class Anagram {
       public boolean isAnagram(String s, String t) {
         // String[] a = s.split("");
         // List<String> b = new ArrayList<>( Arrays.asList(t.split("")));
@@ -20,7 +20,7 @@ class Solution {
         return true;
         
     }
-    public static void main(String[] args){
-        System.out.println( new Solution().isAnagram("sudsin", "niduass"));
-    }
+//    public static void main(String[] args){
+//        System.out.println( new Solution().isAnagram("sudsin", "niduass"));
+//    }
 }
