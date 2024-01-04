@@ -12,11 +12,9 @@ public class DailyTemperature {
 //        stack.push(0);
 
         for(int i =0; i<temperatures.length; i++){
-
             while(!stack.isEmpty() && temperatures[stack.peek()] < temperatures[i]){
                 noOfDays[stack.peek()] = i-stack.pop();
             }
-
             stack.push(i);
         }
 
