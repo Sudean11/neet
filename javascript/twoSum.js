@@ -1,13 +1,13 @@
 function twoSum(nums, target){
-    var a = nums;
-    for(var i = 0; i<a.length; i++){
-        for(var j = i+1; j<a.length; j++){
-            if(a[i]+a[j]== target){
-                console.log(i, j);
-            }
-        }
-    }
+  
+    var forwardPointer = 0;
+    var reversePointer = nums.length;
 
+    while(forwardPointer < reversePointer){
+
+        
+
+    }
 
 }
 
