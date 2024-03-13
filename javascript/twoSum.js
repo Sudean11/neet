@@ -1,14 +1,20 @@
-function twoSum(nums, target){
-  
-    var forwardPointer = 0;
-    var reversePointer = nums.length;
+function twoSum(numbers, target){
+    var firstIndex = 0;
+    var lastIndex = numbers.length-1
+    numbers.sort()
+    console.log(lastIndex)
 
-    while(forwardPointer < reversePointer){
-
-        
-
+    while(true){
+        var sum = numbers[firstIndex] + numbers[lastIndex]
+        if(sum == target){
+            return [firstIndex, lastIndex;
+        }
+        if(sum > target){
+            lastIndex--;
+        }else{
+            firstIndex++;
+        }
     }
-
 }
 
-twoSum([2,7,11,15],9);
+console.log(twoSum([2,7,11,15],9));
